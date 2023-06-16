@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import TicTacToe from '../components/TicTacToe';
-import { Constants } from '../components/Constants';
 import Board from '../components/Board';
+import { ConstantsTest } from '../components/ContantsTest';
 
 describe('TicTacToe works fine when', ()=> {
   beforeEach(() => {
@@ -20,11 +20,11 @@ describe('TicTacToe works fine when', ()=> {
 
   it('should display correct title text', () => {
     const headerText = screen.getByTestId('header');
-    expect(headerText).toHaveTextContent(Constants.TITLE);
+    expect(headerText).toHaveTextContent(ConstantsTest.TITLE);
   });
 
   it("should render board component", () => {
-    render(<Board tiles={Array(Constants.NO_OF_TILES_IN_THE_BOARD).fill(Constants.EMPTY)}/>)
+    render(<Board tiles={Array(ConstantsTest.NO_OF_TILES_IN_THE_BOARD).fill(ConstantsTest.EMPTY)}/>)
     const board = screen.getByTestId('board-container');
     expect(board).toBeInTheDocument();
   });
