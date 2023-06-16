@@ -24,7 +24,7 @@ describe('TicTacToe works fine when', ()=> {
   });
 
   it("should render board component", () => {
-    render(<Board/>)
+    render(<Board tiles={Array(Constants.NO_OF_TILES_IN_THE_BOARD).fill(Constants.EMPTY)}/>)
     const board = screen.getByTestId('board-container');
     expect(board).toBeInTheDocument();
   });

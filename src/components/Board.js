@@ -1,10 +1,14 @@
 import Tile from "./Tile";
 import '../styles/Board.css';
 
-const Board = ({boardTestId}) => {
+const Board = ({boardTestId,tiles}) => {
     return(
         <div className="board-container"  data-testid={boardTestId}>
-            <Tile value='X' tileTestId='tile'/>
+            {
+                tiles.map((tile, i) => (
+                    <Tile value={tile} tileTestId='tile' key={i}/>
+                ))
+            }
         </div>
     )
 }
